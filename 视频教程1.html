@@ -4,71 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="referrer" content="no-referrer" />
-  <title>视频教程1</title>
+  <title>标题</title>
   <style>
     body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;max-width:980px;margin:24px auto;padding:0 12px;}
     a{color:inherit}
-    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;}
-    .btn{padding:8px 12px;border:1px solid #ddd;border-radius:10px;text-decoration:none;background:#fff;cursor:pointer}
-    .btn:active{transform:translateY(1px)}
-    .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-
     .video-wrap{position:relative;width:100%;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000;}
     .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;}
-
-    /* 不拦截点击：只做提示 */
-    .hint{
-      position:absolute;left:12px;right:12px;bottom:12px;z-index:2;
-      padding:10px 12px;border-radius:10px;
-      background:rgba(0,0,0,.55);color:#fff;font-size:14px;line-height:1.35;
-      pointer-events:none; /* 关键：不挡住播放器的真实点击 */
-      backdrop-filter:saturate(120%) blur(2px);
-    }
-    .hint.hide{opacity:0;transition:opacity .25s ease;}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;}
+    .btn{padding:8px 12px;border:1px solid #ddd;border-radius:10px;text-decoration:none}
   </style>
 </head>
 <body>
   <div class="top">
     <h1 style="margin:0;">视频教程1</h1>
-    <div class="actions">
-      <button class="btn" id="openBili" type="button">在新标签打开B站</button>
-      <a class="btn" href="./index.html">返回视频列表</a>
-    </div>
+    <a class="btn" href="./index.html">返回视频列表</a>
   </div>
 
-  <div class="video-wrap" id="wrap">
-    <div class="hint" id="hint">
-      提示：外层脚本无法直接点击 iframe 里的“左下角▶播放”。请直接点播放器左下角▶开始播放（或点上方按钮在新标签打开播放）。
-    </div>
-
+  <div class="video-wrap">
     <iframe
       referrerpolicy="no-referrer"
-      src="https://player.bilibili.com/player.html?isOutside=true&bvid=BV1P82RB5EZ9&p=1&autoplay=0&muted=0"
+      src="https://player.bilibili.com/player.html?bvid=BV1P82RB5EZ9&p=1&autoplay=0&muted=0"
       scrolling="no"
       frameborder="0"
       allowfullscreen="true">
     </iframe>
   </div>
-
-  <script>
-    (() => {
-      const bvid = "BV1P82RB5EZ9";
-      const wrap = document.getElementById("wrap");
-      const hint = document.getElementById("hint");
-      const iframe = wrap.querySelector("iframe");
-      const openBtn = document.getElementById("openBili");
-
-      // 点击视频区域：隐藏提示 + 聚焦 iframe（接下来你点左下角播放更顺手）
-      wrap.addEventListener("click", () => {
-        if (hint) hint.classList.add("hide");
-        if (iframe) iframe.focus();
-      });
-
-      // 真实用户点击触发：新标签打开（更不容易被“自动播放限制/跨域限制”卡住）
-      openBtn.addEventListener("click", () => {
-        window.open(`https://www.bilibili.com/video/${bvid}/`, "_blank", "noopener,noreferrer");
-      });
-    })();
-  </script>
 </body>
 </html>
