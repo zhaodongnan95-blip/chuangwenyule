@@ -12,9 +12,6 @@
     .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;}
     .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;}
     .btn{padding:8px 12px;border:1px solid #ddd;border-radius:10px;text-decoration:none}
-
-    /* 新增：状态提示（给 RPA/人眼都能看） */
-    #load-status{margin:8px 0;color:#666;font-size:14px;}
   </style>
 </head>
 <body>
@@ -23,91 +20,14 @@
     <a class="btn" href="./index.html">返回视频列表</a>
   </div>
 
-  <!-- 新增：加载状态 + 成功标记（RPA 用 #player-ready 判断是否成功） -->
-  <div id="load-status">播放器加载中…</div>
-  <div id="player-ready" style="display:none;"></div>
-
   <div class="video-wrap">
-    <iframe id="bili-player"
-      src="https://player.bilibili.com/player.html?isOutside=true&aid=115664392032628&bvid=BV1pq23BSENH&cid=34511259493&p=1&autoplay=1&muted=1"
+    <iframe
+      src="https://player.bilibili.com/player.html?isOutside=true&aid=115693601233034&bvid=BV15Um4BHE63&cid=34631714405&p=18autoplay=1&muted=1"
       scrolling="no"
       frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen="true">
     </iframe>
   </div>
-
-  <!-- 新增：10 秒内检测不到“可用状态”就标记失败；检测到则写入 ready 标记 -->
-<script>
-(() => {
-  window.PLAYER_READY = false;
-
-  const iframe = document.getElementById('bili-player');
-  const statusEl = document.getElementById('load-status');
-  const readyEl = document.getElementById('player-ready');
-
-  const TIMEOUT_MS = 10000;
-  const start = Date.now();
-
-  function markReady(msg) {
-    if (window.PLAYER_READY) return;
-    window.PLAYER_READY = true;
-    readyEl.style.display = 'block';
-    statusEl.textContent = msg || '播放器已加载';
-  }
-
-  function markFail(msg) {
-    statusEl.textContent = msg || '播放器加载失败/超时';
-  }
-
-  // 关键：iframe 的 load 不再直接当“成功”
-  let iframeLoaded = false;
-  iframe.addEventListener('load', () => {
-    iframeLoaded = true;
-  });
-
-  // 探测：B站域名是否可达（只判断“能不能连上”，不读内容）
-  async function probeBiliReachable() {
-    // 用一个轻量请求；加 cache bust 避免缓存
-    const url = 'https://player.bilibili.com/player.html?probe=1&_t=' + Date.now();
-
-    try {
-      // mode:no-cors 时拿不到内容，但“能发出去”通常不会抛 Failed to fetch
-      await fetch(url, { mode: 'no-cors', cache: 'no-store' });
-      return true;
-    } catch (e) {
-      // 网络断、被拦截、DNS失败等通常会走这里
-      return false;
-    }
-  }
-
-  (async () => {
-    statusEl.textContent = '播放器加载中…';
-
-    // 并行做探测
-    const probePromise = probeBiliReachable();
-
-    // 轮询等待：最多 10 秒
-    const timer = setInterval(async () => {
-      const elapsed = Date.now() - start;
-      if (elapsed > TIMEOUT_MS) {
-        clearInterval(timer);
-        markFail('播放器加载失败/超时');
-        return;
-      }
-
-      // 如果 iframe 已触发 load，并且探测也通过 => 才算成功
-      if (iframeLoaded) {
-        const ok = await probePromise;
-        if (ok) {
-          clearInterval(timer);
-          markReady('播放器已加载');
-        } else {
-          // 探测失败：继续等到超时
-          statusEl.textContent = '播放器加载中…（网络探测未通过）';
-        }
-      }
-    }, 200);
-  })();
-})();
-</script>
+</body>
+</html>
