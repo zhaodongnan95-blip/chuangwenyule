@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <title>自动点赞关注开源项目推荐</title>
+  <style>
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;max-width:960px;margin:24px auto;padding:0 16px;color:#1a1a1a;}
+    h1{margin:0 0 6px;font-size:22px;}
+    h2{font-size:13px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:.05em;margin:28px 0 10px;border-bottom:1px solid #eee;padding-bottom:6px;}
+    .page-desc{color:#666;font-size:14px;margin-bottom:8px;line-height:1.6;}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;}
+    .btn{padding:8px 12px;border:1px solid #ddd;border-radius:10px;text-decoration:none;color:inherit;font-size:14px;}
+    .btn:hover{border-color:#bbb;}
+    .project{border:1px solid #e6e6e6;border-radius:14px;padding:20px;margin-bottom:18px;}
+    .project:hover{border-color:#ccc;}
+    .proj-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;}
+    .proj-name{font-size:17px;font-weight:700;margin:0 0 4px;}
+    .proj-name a{color:#0969da;text-decoration:none;}
+    .proj-name a:hover{text-decoration:underline;}
+    .proj-type{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;margin-top:2px;}
+    .type-daily{background:#e6f4ea;color:#1a7f37;}
+    .type-browser{background:#ddf4ff;color:#0550ae;}
+    .type-script{background:#fff0e0;color:#953800;}
+    .type-like{background:#ffeef2;color:#c4002e;}
+    .stars{font-size:13px;color:#f5a623;white-space:nowrap;font-weight:600;}
+    .proj-summary{font-size:14px;color:#444;line-height:1.65;margin-bottom:12px;}
+    .features-title{font-size:12px;font-weight:700;color:#555;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;}
+    .features{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:4px 12px;}
+    .features li{font-size:13px;color:#333;padding-left:18px;position:relative;line-height:1.6;}
+    .features li::before{content:"✓";position:absolute;left:0;color:#1a7f37;font-weight:700;}
+    .features li.highlight::before{content:"👍";}
+    .meta{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#666;align-items:center;}
+    .tag{background:#f0f0f0;border-radius:6px;padding:2px 8px;}
+    .tag-lang{background:#e8f0fe;color:#1a56db;}
+    .proj-link{display:inline-block;margin-top:12px;font-size:13px;color:#0969da;text-decoration:none;}
+    .proj-link:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <h1>自动点赞关注开源项目推荐</h1>
+    <a class="btn" href="./index.html">返回视频列表</a>
+  </div>
+  <p class="page-desc">以下是 GitHub 上收录的支持 <strong>自动点赞</strong> 和 <strong>自动关注/取关</strong> 功能的热门 Bilibili 开源项目。每个项目均标注了技术栈与核心能力，帮助你快速找到适合自己的工具。</p>
+
+  <h2>🏆 全功能自动化工具（含点赞 + 关注）</h2>
+
+  <div class="project">
+    <div class="proj-header">
+      <div>
+        <div class="proj-name"><a href="https://github.com/RayWangQvQ/BiliBiliToolPro" target="_blank" rel="noopener noreferrer">BiliBiliToolPro</a></div>
+        <span class="proj-type type-daily">全自动日常任务</span>
+      </div>
+      <span class="stars">★ 8000+</span>
+    </div>
+    <p class="proj-summary">
+      GitHub 上 Star 数最高的 B 站自动化工具，基于 .NET（C#）调用官方 API，支持 Docker、青龙面板、GitHub Actions 等多种部署方式。其中内置了<strong>自动点赞视频</strong>与<strong>批量取关不活跃 UP 主</strong>功能，并可配合消息推送（Telegram / 企业微信等）了解每日执行结果。
+    </p>
+    <div class="features-title">点赞 / 关注相关功能</div>
+    <ul class="features">
+      <li class="highlight">自动点赞每日推荐视频</li>
+      <li class="highlight">批量取关不活跃 UP 主</li>
+      <li>自动投币 + 分享视频</li>
+      <li>每日签到（主站 + 直播 + 漫画）</li>
+      <li>大会员福利自动领取</li>
+      <li>多账号并行管理</li>
+      <li>消息推送通知</li>
+    </ul>
+    <div class="meta">
+      <span class="tag tag-lang">C#</span>
+      <span class="tag">GitHub Actions</span>
+      <span class="tag">Docker</span>
+      <span class="tag">青龙面板</span>
+    </div>
+    <a class="proj-link" href="https://github.com/RayWangQvQ/BiliBiliToolPro" target="_blank" rel="noopener noreferrer">→ 查看 GitHub 仓库</a>
+  </div>
+
+  <div class="project">
+    <div class="proj-header">
+      <div>
+        <div class="proj-name"><a href="https://github.com/srcrs/BilibiliTask" target="_blank" rel="noopener noreferrer">BilibiliTask</a></div>
+        <span class="proj-type type-daily">GitHub Actions 自动任务</span>
+      </div>
+      <span class="stars">★ 2600+</span>
+    </div>
+    <p class="proj-summary">
+      仅需 GitHub Actions，无需任何服务器即可运行的 B 站日常任务脚本，基于 Java 编写。配置好 Cookie 后，每天定时自动完成包括<strong>点赞</strong>、投币、关注等多项任务，是零运维成本入门自动化的首选。
+    </p>
+    <div class="features-title">点赞 / 关注相关功能</div>
+    <ul class="features">
+      <li class="highlight">自动点赞视频</li>
+      <li class="highlight">自动关注指定 UP 主</li>
+      <li>自动投币</li>
+      <li>自动分享视频</li>
+      <li>每日签到</li>
+      <li>GitHub Actions 免服务器运行</li>
+    </ul>
+    <div class="meta">
+      <span class="tag tag-lang">Java</span>
+      <span class="tag">GitHub Actions</span>
+      <span class="tag">无服务器</span>
+    </div>
+    <a class="proj-link" href="https://github.com/srcrs/BilibiliTask" target="_blank" rel="noopener noreferrer">→ 查看 GitHub 仓库</a>
+  </div>
+
+  <h2>🌐 浏览器扩展 / 油猴脚本类</h2>
+
+  <div class="project">
+    <div class="proj-header">
+      <div>
+        <div class="proj-name"><a href="https://github.com/andywang425/BLTH" target="_blank" rel="noopener noreferrer">BLTH（Bilibili Live Tasks Helper）</a></div>
+        <span class="proj-type type-browser">直播任务油猴脚本</span>
+      </div>
+      <span class="stars">★ 1100+</span>
+    </div>
+    <p class="proj-summary">
+      通过 Tampermonkey / Violentmonkey 运行的油猴脚本，专注于 B 站直播生态的自动化任务。安装后在浏览器后台静默执行，支持<strong>自动为关注主播点赞</strong>、自动送礼物等关注互动相关操作。
+    </p>
+    <div class="features-title">点赞 / 关注相关功能</div>
+    <ul class="features">
+      <li class="highlight">自动为直播间主播点赞</li>
+      <li class="highlight">自动向关注主播送出礼物</li>
+      <li>直播每日签到</li>
+      <li>自动领取粉丝勋章亲密度</li>
+      <li>天选时刻自动参与抽奖</li>
+      <li>可视化配置面板</li>
+    </ul>
+    <div class="meta">
+      <span class="tag tag-lang">TypeScript</span>
+      <span class="tag">Tampermonkey</span>
+      <span class="tag">油猴脚本</span>
+    </div>
+    <a class="proj-link" href="https://github.com/andywang425/BLTH" target="_blank" rel="noopener noreferrer">→ 查看 GitHub 仓库</a>
+  </div>
+
+  <div class="project">
+    <div class="proj-header">
+      <div>
+        <div class="proj-name"><a href="https://github.com/dd178/BILI_fansmedal" target="_blank" rel="noopener noreferrer">BILI_fansmedal</a></div>
+        <span class="proj-type type-script">粉丝勋章自动点赞脚本</span>
+      </div>
+      <span class="stars">★ 500+</span>
+    </div>
+    <p class="proj-summary">
+      专注于 B 站<strong>粉丝勋章亲密度自动刷取</strong>的脚本，通过自动点赞和互动来提升与关注 UP 主之间的亲密度等级，适合想批量升级粉丝勋章的用户。支持青龙面板和 GitHub Actions 两种部署方式。
+    </p>
+    <div class="features-title">点赞 / 关注相关功能</div>
+    <ul class="features">
+      <li class="highlight">自动点赞提升粉丝勋章亲密度</li>
+      <li class="highlight">批量处理所有已关注 UP 主的勋章</li>
+      <li>支持自定义目标亲密度上限</li>
+      <li>支持青龙面板定时执行</li>
+      <li>GitHub Actions 无服务器运行</li>
+    </ul>
+    <div class="meta">
+      <span class="tag tag-lang">Python</span>
+      <span class="tag">青龙面板</span>
+      <span class="tag">GitHub Actions</span>
+    </div>
+    <a class="proj-link" href="https://github.com/dd178/BILI_fansmedal" target="_blank" rel="noopener noreferrer">→ 查看 GitHub 仓库</a>
+  </div>
+
+  <h2>📋 批量关注 / 取关工具类</h2>
+
+  <div class="project">
+    <div class="proj-header">
+      <div>
+        <div class="proj-name"><a href="https://github.com/DoctorReid/bilibili-unfollow" target="_blank" rel="noopener noreferrer">bilibili-unfollow</a></div>
+        <span class="proj-type type-like">批量取关工具</span>
+      </div>
+      <span class="stars">★ 300+</span>
+    </div>
+    <p class="proj-summary">
+      专门用于 B 站<strong>批量取消关注</strong>的轻量油猴脚本。直接在 B 站网页端的关注列表页面运行，一键自动遍历并取消所有不想继续关注的 UP 主，解决手动逐个取关效率低的问题。
+    </p>
+    <div class="features-title">关注管理功能</div>
+    <ul class="features">
+      <li class="highlight">一键批量取消关注</li>
+      <li class="highlight">支持按条件筛选取关对象</li>
+      <li>在网页端直接运行，无需安装额外软件</li>
+      <li>操作可视化，实时显示进度</li>
+    </ul>
+    <div class="meta">
+      <span class="tag tag-lang">JavaScript</span>
+      <span class="tag">油猴脚本</span>
+      <span class="tag">Tampermonkey</span>
+    </div>
+    <a class="proj-link" href="https://github.com/DoctorReid/bilibili-unfollow" target="_blank" rel="noopener noreferrer">→ 查看 GitHub 仓库</a>
+  </div>
+
+  <div class="project">
+    <div class="proj-header">
+      <div>
+        <div class="proj-name"><a href="https://github.com/lkeme/BiliHelper-personal" target="_blank" rel="noopener noreferrer">BiliHelper-personal</a></div>
+        <span class="proj-type type-daily">直播 + 日常综合助手</span>
+      </div>
+      <span class="stars">★ 1000+</span>
+    </div>
+    <p class="proj-summary">
+      基于 PHP 开发的 B 站个人助手，包含完整的日常任务自动化模块，其中包括<strong>自动投币与点赞</strong>视频。适合有 PHP 环境或 Docker 的用户部署，可多账号并发运行，功能覆盖广。
+    </p>
+    <div class="features-title">点赞 / 关注相关功能</div>
+    <ul class="features">
+      <li class="highlight">自动投币 + 点赞视频</li>
+      <li class="highlight">直播间自动关注获取亲密度</li>
+      <li>直播签到</li>
+      <li>天选时刻自动参与</li>
+      <li>多账号支持</li>
+      <li>Docker 一键部署</li>
+    </ul>
+    <div class="meta">
+      <span class="tag tag-lang">PHP</span>
+      <span class="tag">Docker</span>
+      <span class="tag">Composer</span>
+    </div>
+    <a class="proj-link" href="https://github.com/lkeme/BiliHelper-personal" target="_blank" rel="noopener noreferrer">→ 查看 GitHub 仓库</a>
+  </div>
+
+</body>
+</html>
