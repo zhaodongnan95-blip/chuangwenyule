@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Bilibili 自动化脚本开源项目</title>
+  <style>
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;max-width:980px;margin:24px auto;padding:0 12px;}
+    h1{margin:0 0 6px}
+    .desc{color:#666;font-size:14px;margin-bottom:18px;}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;}
+    .btn{padding:8px 12px;border:1px solid #ddd;border-radius:10px;text-decoration:none;color:inherit;}
+    .btn:hover{border-color:#bbb}
+    .list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+    .card{border:1px solid #e6e6e6;border-radius:14px;padding:16px;text-decoration:none;color:inherit;display:block;}
+    .card:hover{border-color:#bbb}
+    .card-title{font-size:16px;font-weight:600;margin-bottom:6px;}
+    .card-desc{color:#444;font-size:13px;margin-bottom:10px;line-height:1.5;}
+    .card-meta{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:#666;}
+    .tag{background:#f0f0f0;border-radius:6px;padding:2px 8px;}
+    .stars{color:#f5a623;}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <h1>Bilibili 自动化脚本开源项目</h1>
+    <a class="btn" href="./index.html">返回视频列表</a>
+  </div>
+  <p class="desc">以下是在 GitHub 上整理的热门 Bilibili 自动化脚本开源项目，按 Star 数排序。</p>
+
+  <div class="list">
+
+    <a class="card" href="https://github.com/RayWangQvQ/BiliBiliToolPro" target="_blank" rel="noopener noreferrer">
+      <div class="card-title">BiliBiliToolPro</div>
+      <div class="card-desc">B 站（bilibili）全自动任务工具，支持每日签到、投币、点赞、分享、漫画签到、直播挂机、大会员福利领取、天选抽奖等，支持 Docker、青龙面板、GitHub Actions 等多种部署方式。</div>
+      <div class="card-meta">
+        <span class="stars">★ 8000+</span>
+        <span class="tag">C#</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">Docker</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://github.com/bilibili-helper/bilibili-helper-o" target="_blank" rel="noopener noreferrer">
+      <div class="card-title">bilibili-helper-o</div>
+      <div class="card-desc">哔哩哔哩（bilibili.com）浏览器辅助扩展，可替换播放器、推送通知并进行一些快捷操作，支持 Chrome/Firefox 等主流浏览器。</div>
+      <div class="card-meta">
+        <span class="stars">★ 3900+</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Chrome Extension</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://github.com/biliup/biliup-app" target="_blank" rel="noopener noreferrer">
+      <div class="card-title">biliup-app</div>
+      <div class="card-desc">B 站全平台投稿客户端，支持多 P 投稿、稿件编辑，界面友好，跨平台（Windows/macOS/Linux）可用。</div>
+      <div class="card-meta">
+        <span class="stars">★ 1400+</span>
+        <span class="tag">Rust</span>
+        <span class="tag">跨平台</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://github.com/andywang425/BLTH" target="_blank" rel="noopener noreferrer">
+      <div class="card-title">BLTH（Bilibili Live Tasks Helper）</div>
+      <div class="card-desc">哔哩哔哩油猴辅助脚本，主要用于自动完成直播相关任务（如直播签到、自动送礼、天选抽奖等），支持 Tampermonkey / Violentmonkey。</div>
+      <div class="card-meta">
+        <span class="stars">★ 1100+</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Tampermonkey</span>
+        <span class="tag">油猴脚本</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://github.com/biliup/biliup-rs" target="_blank" rel="noopener noreferrer">
+      <div class="card-title">biliup-rs</div>
+      <div class="card-desc">命令行 B 站投稿与视频下载工具，提供多种登录方式，支持多 P 上传，可集成到自动化流程中。</div>
+      <div class="card-meta">
+        <span class="stars">★ 1000+</span>
+        <span class="tag">Rust</span>
+        <span class="tag">CLI</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://github.com/lkeme/BiliHelper-personal" target="_blank" rel="noopener noreferrer">
+      <div class="card-title">BiliHelper-personal</div>
+      <div class="card-desc">哔哩哔哩（Bilibili）PHP 版助手，支持直播挂机、自动签到、投币等多种自动化任务。</div>
+      <div class="card-meta">
+        <span class="stars">★ 1000+</span>
+        <span class="tag">PHP</span>
+        <span class="tag">Docker</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://github.com/metowolf/BilibiliHelper" target="_blank" rel="noopener noreferrer">
+      <div class="card-title">BilibiliHelper</div>
+      <div class="card-desc">B 站自动领瓜子、直播挂机脚本，基于 Node.js，支持 Docker 部署，可实现直播间自动领取瓜子等任务。</div>
+      <div class="card-meta">
+        <span class="stars">★ 900+</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Docker</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://github.com/pandaGao/bilibili-live-helper" target="_blank" rel="noopener noreferrer">
+      <div class="card-title">bilibili-live-helper</div>
+      <div class="card-desc">Bilibili 直播弹幕桌面工具，支持 Mac / Windows / Linux，可用于监控和自动响应直播间弹幕消息。</div>
+      <div class="card-meta">
+        <span class="stars">★ 560+</span>
+        <span class="tag">Vue</span>
+        <span class="tag">Electron</span>
+        <span class="tag">跨平台</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://github.com/poboll/wps_script" target="_blank" rel="noopener noreferrer">
+      <div class="card-title">wps_script</div>
+      <div class="card-desc">WPS 签到脚本集合，适用于金山文档 AirScript 自动化执行，包含 Bilibili 等多个平台的自动签到功能。</div>
+      <div class="card-meta">
+        <span class="stars">★ 130+</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">签到脚本</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://github.com/Neutralization/BiliBiliRankingScripts" target="_blank" rel="noopener noreferrer">
+      <div class="card-title">BiliBiliRankingScripts</div>
+      <div class="card-desc">周刊哔哩哔哩排行榜视频制作自动化脚本，涵盖数据抓取、视频渲染（After Effects）、自动投稿等完整流程。</div>
+      <div class="card-meta">
+        <span class="stars">★ 70+</span>
+        <span class="tag">Python</span>
+        <span class="tag">After Effects</span>
+        <span class="tag">自动投稿</span>
+      </div>
+    </a>
+
+  </div>
+</body>
+</html>
